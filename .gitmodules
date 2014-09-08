@@ -1,0 +1,12 @@
+[submodule "externals/nrel-fast"]
+	path = externals/nrel-fast
+	url = git@github.com:n1ywb/nrel-fast.git
+[submodule "externals/nrel-aerodyn"]
+	path = externals/nrel-aerodyn
+	url = git@github.com:n1ywb/nrel-aerodyn.git
+[submodule "externals/nrel-inflowwind"]
+	path = externals/nrel-inflowwind
+	url = git@github.com:n1ywb/nrel-inflowwind.git
+[submodule "externals/nrel-nwtc"]
+	path = externals/nrel-nwtc
+	url = git@github.com:n1ywb/nrel-nwtc.git

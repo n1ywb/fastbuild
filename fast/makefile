@@ -168,6 +168,7 @@ fftpack.obj: fftpack.f
 	$(F77) $(FFLAGS) -c $< -o $(INTER_DIR)/$@ -J $(INTER_DIR)
 
    #  Dependency rules.
+SharedInflowDefs.obj:    NWTC_Library.obj
 ModMesh.obj:             $(PREC).obj
 $(SYS_FILE).obj:         $(PREC).obj
 NWTC_IO.obj:             $(SYS_FILE).obj
@@ -183,11 +184,13 @@ CTWind.obj:              NWTC_Library.obj  SharedInflowDefs.obj
 UserWind.obj:            NWTC_Library.obj  SharedInflowDefs.obj
 InflowWindMod.obj:       NWTC_Library.obj  SharedInflowDefs.obj  HHWind.obj  FFWind.obj  HAWCWind.obj  FDWind.obj  CTWind.obj  UserWind.obj
 
+SharedTypes.obj:         NWTC_Library.obj
 AeroMods.obj:            NWTC_Library.obj
 GenSubs.obj:             NWTC_Library.obj  AeroMods.obj
-AeroSubs.obj:            NWTC_Library.obj  AeroMods.obj
+AeroSubs.obj:            NWTC_Library.obj  AeroMods.obj InflowWindMod.obj
 AeroDyn.obj:             NWTC_Library.obj  AeroMods.obj  SharedTypes.obj  AeroSubs.obj  GenSubs.obj  InflowWindMod.obj
 
+FFTMod.obj:              NWTC_Library.obj
 fftpack.obj:             NWTC_Library.obj
 HydroCalc.obj:           NWTC_Library.obj  FFTMod.obj
 
@@ -196,12 +199,12 @@ Noise.obj:               NWTC_Library.obj  FAST_Mods.obj  AeroDyn.obj  InflowWin
 FAST_IO.obj:             NWTC_Library.obj  FAST_Mods.obj  AeroDyn.obj  InflowWindMod.obj  HydroCalc.obj  Noise.obj
 FAST.obj:                NWTC_Library.obj  FAST_Mods.obj  AeroDyn.obj  InflowWindMod.obj  HydroCalc.obj  FAST_IO.obj
 FAST_Lin.obj:            NWTC_Library.obj  FAST_Mods.obj  AeroDyn.obj  InflowWindMod.obj  FAST.obj
-FAST2ADAMS.obj:          NWTC_Library.obj  FAST_Mods.obj  AeroDyn.obj  InflowWindMod.obj
+FAST2ADAMS.obj:          NWTC_Library.obj  FAST_Mods.obj  AeroDyn.obj  InflowWindMod.obj FAST.obj
 PitchCntrl_ACH.obj:      NWTC_Library.obj
 UserSubs.obj:            NWTC_Library.obj
 UserVSCont_KP.obj:       NWTC_Library.obj
 AeroCalc.obj:            NWTC_Library.obj  Noise.obj
-SetVersion.obj:          NWTC_Library.obj  HydroCalc.obj
+SetVersion.obj:          NWTC_Library.obj  HydroCalc.obj  FAST_Mods.obj
 FAST_Prog.obj:           NWTC_Library.obj  FAST_Mods.obj  FAST_IO.obj  FAST.obj  FAST2ADAMS.obj  FAST_Lin.obj  HydroCalc.obj  Noise.obj
 
 BladedDLLInterface.obj:               NWTC_Library.obj  FAST_Mods.obj

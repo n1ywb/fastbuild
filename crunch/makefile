@@ -26,10 +26,10 @@ BITS = 64
 ifeq ($(OS),Windows_NT)
    LIB_DIR = M:/CAEtools/Miscellaneous/NWTC_Library/trunk/source
 else
-   LIB_DIR = $(HOME)/PC/CAEtools/Miscellaneous/NWTC_Library/trunk/source
+   LIB_DIR = ../externals/nrel-nwtc/source
 endif
 
-CRUNCH_DIR = Source
+CRUNCH_DIR = ../externals/nrel-crunch/Source
 
    # Name of compiler to use and flags to use.
 

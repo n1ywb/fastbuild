@@ -7,5 +7,7 @@ ln -s ../externals/nrel-fast/Source/* .
 ln -s ../externals/nrel-aerodyn/Source/* .
 ln -s ../externals/nrel-inflowwind/Source/* .
 ln -s ../externals/nrel-nwtc/source/* .
+ln -s ../externals/nrel-iecwind/Source/* .
+ln -s ../externals/nrel-crunch/Source/* .
 popd
 

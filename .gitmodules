@@ -10,3 +10,9 @@
 [submodule "externals/nrel-nwtc"]
 	path = externals/nrel-nwtc
 	url = git@github.com:n1ywb/nrel-nwtc.git
+[submodule "externals/nrel-iecwind"]
+	path = externals/nrel-iecwind
+	url = git@github.com:n1ywb/nrel-iecwind.git
+[submodule "externals/nrel-crunch"]
+	path = externals/nrel-crunch
+	url = git@github.com:n1ywb/nrel-crunch.git

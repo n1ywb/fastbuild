@@ -56,3 +56,7 @@ docs/_build/
 *.obj
 *.mod
 
+Crunch_glin*
+FAST_glin*
+IECWind_glin*
+
